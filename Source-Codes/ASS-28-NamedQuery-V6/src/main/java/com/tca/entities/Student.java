@@ -9,13 +9,18 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name="student")
+
 @NamedQueries(
 		value = {
-				@NamedQuery(name="GET_ALL_INFO",query="FROM Student"),
-				@NamedQuery(name="GET_CITYWISE", query="FROM Student where city= :abc"),
-				@NamedQuery(name="MODIFY_STUDENT_CITY", query="UPDATE Student SET city=:newcity WHERE city=:oldcity"),
-				@NamedQuery(name="REMOVE_STUDENT", query="DELETE FROM Student WHERE rno =:rollnumber")
-			})
+					@NamedQuery(name="GET_ALL_INFO", query="FROM Student"),
+					@NamedQuery(name="GET_CITYWISE", query="FROM Student where city= :abc "),
+					@NamedQuery(name="MODIFY_STUDENT_CITY", 
+								query="UPDATE Student SET city= :ncity WHERE city= :ocity"),
+					@NamedQuery(name="REMOVE_STUDENT",
+								query="DELETE FROM Student where rno=:rollnumber")
+				} 
+		)
+
 public class Student 
 {
 	@Id
