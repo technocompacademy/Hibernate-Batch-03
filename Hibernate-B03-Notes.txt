@@ -1,0 +1,1277 @@
+🛑 Admission - Hibernate Batch-20
+----------------------------------
+
+✅ Mentor      : Sachin Dhane
+✅ Course Code : HIB-03
+✅ Course Name : Hibernate Framework
+✅ Days        : ******, 9.00 PM  
+✅ Course Fees : Rs. 8000
+✅ Google Pay  : 9028282629
+✅ Phone  Pay  : 9028282629
+
+
+🛑 Installament
+Installment 1 : Rs. 4000  
+Installment 2 : Rs. 4000 
+
+🛑 Note :
+---------  
+Complete Your Payments & mail Below Details to "fees@technocompacademy.com"
+Also on WhatsApp to "9028282629"
+
+1) Your Full Name (This name will Appear on Certificate)
+2) WhatsApp Number
+3) Email
+4) Batch Code E.g HIB-03
+5) Payment ScreenShot
+
+------------------------------------
+
+Q. What is Hibernate ?
+Q. Why Hibernate is used in Java Developement ?
+Q. Where I can See hibernate in MVC Architecture ?
+
+Q. What is Hibernate ?
+-----------------------------
+--> Hibernate is a Framework.
+--> Hinerate is a ORM Framework.
+--> Hibernate is a ORM Framework(semi developed s/w) used to build communication between Application and Database efficiently.
+
+
+Q. In a Project Developement, where we can See Hibernate ?
+------------------------------------------------------------
+
+
+Q. Types of Framework
+----------------------
+
+
+Q. What is ORM
+---------------------
+
+
+15-07-2025
+
+Topic -
+--------
+ Entity class
+ persistent class
+ persistent entity class
+ pojo class
+ Why hibernate need 0-argument constructor
+ 	-- importent setters
+
+
+Pojo Class implementation
+
+Next Lecture is on Monday @ 9 PM
+
+
+🛑 Admission - Hibernate Batch-03
+----------------------------------
+
+✅ Mentor      : Sachin Dhane
+✅ Course Code : HIB-03
+✅ Course Name : Hibernate Framework
+✅ Days        : Mon-Tue-Wed, 9.00 PM
+✅ Course Fees : Rs. 8000
+✅ Google Pay  : 9028282629
+✅ Phone  Pay  : 9028282629
+
+
+🛑 Installament
+Installment 1 : Rs. 4000  
+Installment 2 : Rs. 4000 
+
+🛑 Note :  
+Complete Your Payments & mail Below Details to "fees@technocompacademy.com"
+Also on WhatsApp to "9028282629"
+
+1) Your Full Name (This name will Appear on Certificate)
+2) WhatsApp Number
+3) Email
+4) Batch Code E.g HIB-03
+5) Payment ScreenShot
+
+
+24-hours  
+Whatsappp Group
+App Access
+
+
+
+Q. What is Data Persistency ?
+-------------------------------
+--> Storing data permanently on storage medium i.e file or database.
+
+
+Problem with File
+-------------------
+--> Not effcient
+--> File has Limited storage.
+
+
+ 
+There are 3 core components of Data Persistence - 
+------------------------------------------------- 
+1. Data   -- What to Persist ? 
+2. Medium –  How to Persist?      JDBC , hibernate, SpringData JPA
+3. Storage – where to Persist?    File, Database
+
+
+The data need to be persisted can be – 
+----------------------------------------
+1. Raw Data : Data is in variable
+2. Java Object
+
+int     rno = 101
+String  name= "AAA"
+float   per = 70
+
+Save this data
+-------------------------
+
+int     rno = 101
+String  name= "AAA"
+float   per = 70
+
+Student s =  new Student(rno,name,per);
+
+save this object
+
+Persit Operation / CRUD Operations
+---------------------------------------
+C - CREATE
+R - Read / SELECT
+U - UPDATE
+D - DELETE
+
+
+Raw Data - Data Persistency Using JDBC
+----------------------------------
+
+CREATE TABLE student(
+	rno  int PRIMARY KEY,
+	name varchar(10),
+	per float
+);
+
+INSERT INTO student VALUES(101,'AAA', 60);
+
+
+class Student implements AutoClosable
+{
+	File f;
+
+	void close()
+	{
+		"hurrry"
+		f.close()
+	}
+}
+
+Student ob = new Student();
+ob.display();
+
+
+try(ob = new Student())
+{
+	ob.display()	
+}
+
+https://docs.oracle.com/javase/8/docs/api/java/lang/AutoCloseable.html
+
+List<Student> L = new ArrayList<>();
+
+---------------------------------------------------
+
+Object - Data Persistency Using JDBC
+
+
+http://localhost:8080/addstudent
+http://localhost:8080/displaystudent
+
+https://tca.com/enroll
+-------------------------------------
+
+==================
+Why Hibernate ??
+==================
+
+I want to persist my data, so as a Java Developer I have few Solutions in my Mind-
+	1. Data Peristency  Using File
+	2. Data Persistency Using JDBC
+	3. Data Persistency Using Hibernate(Framework)
+
+Problem with Files during Persistency
+------------------------------------
+--> It is not suitable for enterprise applications; it may be suitable for simple standalone applications. 
+--> File is very difficult and inefficient in handling large and Complex data.
+--> Insertion, deletion and Updation are very costly in terms of Time. 
+--> File can not be acccessible concurrently(No Concurrent Access) 
+--> Files does not have query Support. 
+
+
+Problem with JDBC during Persistency
+----------------------------------------
+--> Hard Coded SQL, We have to embed SQL code within Java Program which makes 
+programs non-portable. 
+
+e.g
+---
+MySQL
+	CREATE TABLE student(rno int primary key AUTOINCREMENT, name varchar, );
+
+POSTGRES
+	CREATE TABLE student(rno SERIAL, name varchar, );
+
+
+--> SQL queries are database dependent,  So if we changed database we need to change JDBC Code too.
+
+--> JDBC API can't transfer directly java objects, you have to collect the data from object and send it to database through SQL Query. 
+
+
+Solution to above problem is ORM(Hibernate) 
+----------------------------------------------
+--> We represent data in Different Models like HyperText Data Model, Objet oriented Model, Relational Model, Mapping Data from different models to database ORM is used.
+--> Hibernate is database independent, it can be used for any type of database.
+--> Hibernate is having its own Query Language in the form of HQL which is a database independent way of constructing queries in order to simplify database operations.
+--> Native SQL
+--> Hibernate can be used with all the types of applications like Standalone applications,web applications and enterprise applications. 
+--> Hibernate is providing very good Collections support to manage the data of the database. 
+
+Normal JDBC Approach 
+--------------------------
+ResultSet rs = stmt.executeQuery(“Select * from student”); 
+
+List<Student> L = new ArrayList<>(); 
+ 
+while(rs.next()) 
+{ 
+  student std = new Student(); 
+
+  std.setRno(rs.getInt("rno")); 
+  std.setName(rs.getString("name")); 
+  std.setPer (rs.getString("per"));
+
+  L.add(std); 
+ }
+
+Hibernate Approach 
+----------------------
+List<Student> list =      session.query("Select * from student");
+
+--> Hibernate is having very "good Cache" support in order to reduce no. of hits to the database and in order to improve performance of the database operations. 
+
+select * from student --> Transalte --> executer --> Result --> Send
+
+stmt.executeQuery(“Select * from student”); 
+stmt.executeQuery(“Select * from student”); 
+stmt.executeQuery(“Select * from student”); 
+stmt.executeQuery(“Select * from student”); 
+stmt.executeQuery(“Select * from student”); 
+
+--> To avoid SQL queries utilization in java applications, hibernate has provided HQL, but, still if we want to use SQL queries in hibernate then we have to use “Native SQL”.
+
+-------------------------------------------------------------
+
+--> Maven is Build Tool
+		-- Develope
+		-- JAR/dependencies --> information, version
+		-- To Folder Strucuter(Package Strucute)
+		-- Deployment
+
+
+src/main/java
+	|-- Demo.java
+
+src/main/web
+	|-- demo.jsp
+
+
+1.3.17
+
+com.tca.infinity.entities
+		-- student
+com.tca.projectid.entites
+
+SNAPSHOT - means it's not a finalize project/ under developement version. 
+RELEASE  - means its a finalized version project 
+
+
+
+ddl
+----
+Create:
+--> Create table if not exist
+--> if table present , drops the table and create new one.
+
+create-drop:
+------------
+
+update:
+----------
+--> Create table if not exist
+--> Marathi -- jar table exist kart asel tar 'update' property database design modify karate as per entity class
+
+validate
+---------
+rno --- RNO
+name --NAME   varchar(10)
+
+
+Q. Sir can we give another name to our hibernate configuration file ?
+Ans:
+Yes
+	by default name --> hibernate.cfg.xml
+	configuration.configure()
+
+Q. Is it possible to connect with more than one Database from a single Hibernate application? 
+--> Yes
+
+Multiple Entity class:
+Student.hbm.xml
+Teacher.hbm.xml
+Student.java
+Teacher.java
+
+Topics Covered Under CRUD Operation
+---------------------------------
+save()
+persist()
+get()
+load()
+update()
+delete()
+saveOrUpdate()
+
+Difference between load() and get() ?
+
+==========================================================
+
+Pagination
+============
+---> Instead of showing/fetching whole result to the user, show/fetch in some set of records is called Pagination.
+--> Assume you have 10 records in Student table
+	
+	"Select * from student" will give you all 10 records.
+Now in case of Pagination, Assuming we will fech 3 records at a time,
+So in first fetch We will get Record-0,record-1, record-2,
+In second fectch we will  get Record-3,Record-4, Record-5
+Similarly in Last(4th) fetch you will get only one record.
+
+--> The process of displaying results in more than one page is called Pagination.
+--> 
+Example : Displaying three results per page and three pages out of 9 results is Pagination. 
+
+setMaxResults(3):
+----------------
+--> It will Allow to fetch maximum 3 records from result set.
+
+setFirstResult(i)
+-------------------
+--> it will fetch 3 records from ith position
+
+	+------+-------+------+----------+
+i	| srno | sname | sper | scity    |
+	+------+-------+------+----------+
+0 	|  101 | AAA   |   62 | PUNE     |
+1   |  102 | BBB   |   77 | PUNE     |
+2   |  103 | CCC   |   80 | DELHI    |
+
+3   |  104 | DDD   |   92 | PUNE     |
+4   |  105 | EEE   |   77 | PUNE     |
+5   |  106 | FFF   |   45 | PANJI    |
+
+6   |  107 | GGG   |   55 | PANVEL   |
+7   |  108 | HHH   |   48 | BANGLORE |
+8   |  109 | III   |   64 | SATARA   |
+
+9   |  110 | JJJ   |   95 | HYDRABAD |
++------+-------+------+----------+
+
+
+
+Filters in Hibernate
+=====================
+--> The @Filter annotation in Hibernate is used to apply dynamic filtering conditions to entity queries without modifying the actual query (HQL/Criteria/Native). It acts like a WHERE clause that can be turned on or off at runtime, based on parameters. 
+
+Query<Student> query = session.createQuery("FROM student");
+
+List<Student> L = query.list();
+
+SELECT * FROM student;
+
+
+Q. Find Occurance of Unique Elements in Array.
+   [Use LinkedHashMap]
+
+int a[] = {11,22,11,33,22,44,55,44};
+
+Output:
+-------
+11 : 2
+22 : 2
+33 : 1
+44 : 2
+55 : 1
+
+
+--> Query designed using HQL is having Entity Class's properties.
+
+=============================================================
+
+student(srno,sname, sper, scity)
+         101  AAA
+         102  BBB
+
+teacher(tno, tname, tsalary, tcity)
+		 1    PPP	
+         2    QQQ
+
+st(srno, tno, ldate)
+    101   1    13-10-2025
+    101   2    14-10-2025
+    102   1    13-10-2025
+
+
+SELECT student.sname
+FROM student,st
+WHERE student.srno = st.srno
+AND st.ldate = '13-10-2025'
+
+
+FROM Student
+
+Native SQL
+
+SELECT student.sname, tname, ldate
+FROM student,teacher,st
+WHERE student.srno = st.srno
+AND   teacher.tno  = st.tno;
+
+
+
+AAA  PPP 13-10-2025  9988776656
+AAA  QQQ 14-10-2025
+BBB  PPP 13-10-2025
+
+cretate table student(rno serial)
+cretate table student(rno int AUTOINCREMT)
+
+date()
+mysql_date()
+
+
+HQL : Object Oriented
+
+Native SQL : Database specific, 
+			 Database dependent
+			 Lost Query Optimization
+
+SELECT * FROM STUDENT;
+
+PRINT * FROM STUDENT;
+
+Criterion API 
+--------------
+It is a library gives you a way to write SQL in Java code
+
+		SELECT  --> select()
+		FROM    --> from()
+		WHERE   --> Predicate
+		<       --> lt()
+		>       --> gt()
+
+		cond1 AND cond2
+		and(cond1, cond2)
+
+select * from student
+----------------------
+
+cq.multiselect(
+
+	root.get("name").alias("stud_name"), 
+	root.get("city").alias("city"), 
+	root.get("per").alias("per"));
+
+
+SELECT name
+
+Tuple t = ----;
+t.add(t1);
+t.add(t2);
+
+      stud_name  city   per
+t1 : (AAA        PUNE   60)
+t2 : (BBB        DELHI  70)
+
+101  AAA  60 PUNE
+102  BBB  70 DELHI
+
+class Emp
+{
+	int eid;
+}
+
+class Tuple
+{
+	stud_name;
+	city;
+	per;
+}
+
+count(*) -- > 2
+
+Expression<Long> exp = cb.count(root);
+
+
+max(per)
+
+Expression<Double> exp = cb.max(root.get("per"));
+
+
+int data=10;
+
+
+NamedQuery
+===========
+
+@Entity
+@Table(name="student")
+Q1 : "select * from student where srno=101"
+Q2 : "Update student set per = 98 where rno=108"
+class Student
+{
+	rno
+	name
+	per
+}
+
+
+
+Query q = session.createQuery("GET_ALL_STUDENTS");
+
+
+
+@NamedQueries(
+		value = {
+					@NamedQuery(name="GET_ALL_INFO", query="FROM Student"),
+					@NamedQuery(name="GET_CITYWISE", query="FROM Student where city= :abc "),
+					@NamedQuery(name="MODIFY_STUDENT_CITY", 
+								query="UPDATE Student SET city= :ncity WHERE city= :ocity"),
+					@NamedQuery(name="REMOVE_STUDENT",
+								query="DELETE FROM Student where rno=:rollnumber")
+				} 
+		)
+
+
+
+
+Hibernate Mapping
+=================
+
+1. Basic Type Mapping  --> Happen between Java Type with SQL Type
+
+2. Component Mapping   
+	--> When other class object as a member in Entity class
+	--> Address class object is declared as a membe in Studen(Entity) class.
+
+3. Inheritance Mapping (Parent-Child Relation)
+	--> Table per class Mapping
+	--> Table per Subclass Mapping
+	--> Table per concrete class Mapping
+
+4. Association Mapping (Relationships in SQL)
+	--> One to One
+	--> One to Many Mapping
+	--> Many to Many Mappings
+
+
+
+2. Component Mapping
+=======================
+
+@Entity
+class Student
+{
+	int rno;
+	String name;
+	double per;
+
+	String city;
+	String State;
+	String country;
+}
+
+
+sesion.save(ob1); 	// Sachin
+session.save(ob2);	// Anuj
+
+Student class  Using Componet Mapping 
+---------------------------------------
+@Entity
+class Student
+{
+	int rno;
+	String name;
+	double per;
+
+	@Embedded
+	Address address;
+
+	@Embedded
+	Contact contat;
+}
+
+@Embeddable
+class Address
+{
+	String city;
+	String State;
+	String country;
+}
+
+class Contact
+{
+	int coutrycode;
+	String mobileNumber;
+}
+
+
+sir jeva apn get karnar info teva hb cache la kas samjnar ki info same ahe
+
+Reflection API
+:
+class Class
+{
+	
+}
+
+
+
+
+
+
+Core(Advance) Java
+
+Assignment
+==============
+
+Create object of a Student class without using 'new'
+
+Studen s = new Student(101,"Sachin", 70);
+
+s.display();
+
+Hint : Reflection API
+
+
+session.get(Student.class, 101 )
+
+Class<Student> c =  Student.class
+Constrctor con [] = c.getContstrucors();
+
+con.call(101,)
+
+
+
+Association Mapping
+===================
+--> Association Mapping refers to mapping relationships between Java entity classes based on their real-world relationships.
+
+--> These relationships are reflected in the database using foreign keys and are managed in Hibernate using special annotations.  
+
+@Id 			: used to represnt Primary Key.
+@OneToOne  	: Maps a one-to-one association 
+@OneToMany  : Maps a one-to-many association 
+@ManyToOne  : Maps a many-to-one association 
+@ManyToMany : Maps a many-to-many association 
+
+@JoinColumn : Specifies the foreign key column 
+@JoinTable  : Used in many-to-many to define the association table 
+
+Q. Why is Association Mapping Needed? 
+-------------------------------------
+--> When two entities have a relationship (One-to-Many, Many-to-One, One-to-One, Many-to-Many) in the relational model, we need Association Mapping to provide a connection between the Object Model (Entity classes) and the Relational Model (Database tables). 
+
+--> Association Mapping is used to manage and map foreign key relationships from the relational model into the object-oriented model. 
+
+--> Because of Association Mapping, a Java developer does not need to manually write SQL JOINs. Hibernate automatically handles joining associated entities behind the scenes.
+
+
+Types of Associations 
+----------------------- 
+1. One-to-One  : One object is mapped to exactly one object  
+   Example: One Car has one Engine 
+
+2. One-to-Many : One object is mapped to multiple objects  
+   Example: One Department has Many Employees  
+
+3. Many-to-One : Many objects are mapped to one object  
+   Example:  Many Employees are having One Department 
+
+4. Many-to-Many : Many objects are mapped to many objects  
+   Example: Many Students have enrolled Many Courses.
+
+
+Note:
+------
+--> Relationship/Association can be Unidirectional or Bi-directional.
+
+Customar    ---[1:M]----  Order    ---> Unidirectional
+Department  ---[1:M]----  Employee  --> Bi-directional
+
+
+
+One to One Mapping
+====================
+ 
+
+SELECT S.NAME
+FROM Student S ,  STUDENT_COURSE SC
+WHERE
+
+
+AND SC.CID=111;
+
+
+
+SELECT S.name, C.cname
+FROM  student S, course C, student_course SC
+WHERE S.rno = SC.fk_rno
+AND   C.cid = SC.fk_cid
+AND    SC.reg_date = '2025-11-13';
+
+SELECT SC.fk_rno, SC.fk_cid
+FROM  student_course SC
+where   SC.reg_date = '2025-11-13';
+
+
+
+
+String hql = "FROM StudentCourse SC WHERE SC.regdate=:udate";
+
+
+
+
+
+
+
+"FROM Student WHERE rno=101"
+
+
+
+
+
+
+
+student_courses_view.js:40 Uncaught (in promise) TypeError: Cannot read properties of undefined (reading 'close')
+    at send-receipt-email (student_courses_view.js:40:28)
+send-receipt-email	@	student_courses_view.js:40
+await in send-receipt-email		
+(anonymous)	@	student_courses_view.js:163
+
+
+
+Line --->  await loadingAlert.close(); // Close loading indicator
+
+] Mailer Error: SMTP Error: Could not connect to SMTP host. Failed to connect to server SMTP server error: Failed to connect to server
+
+
+
+pc8Q,G7Y1BmI90Z&
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Dependencies
+============
+
+<dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-core</artifactId>
+    <version>3.6.10.Final</version>
+</dependency>
+  
+<dependency>
+    <groupId>com.mysql</groupId>
+    <artifactId>mysql-connector-j</artifactId>
+    <version>8.4.0</version>
+</dependency> 
+
+
+<dependency>
+    <groupId>org.postgresql</groupId>
+    <artifactId>postgresql</artifactId>
+    <version>42.7.7</version>
+</dependency>
+  
+  
+  
+  <dependency>
+    <groupId>javassist</groupId>
+    <artifactId>javassist</artifactId>
+    <version>3.12.1.GA</version>
+</dependency>
+
+ <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-log4j12</artifactId>
+        <version>1.6.2</version>
+</dependency>
+
+
+
+
+
+DTD Lib
+----------
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+
+To write a service(web serice)
+Restful Services
+WAR
+
+Stored Procedure
+------------------
+1. Ashi functions(procedure) database side tumi lihata
+2. CREATE FUNCTION
+	DDL
+	DROP FUNCTION
+------------------------------------
+
+int add(int a, int b)
+{
+	int ans;
+
+	return ans;
+}
+
+xyz
+FY - 128 Disting
+	 1
+98
+14
+6
+
+
+True 4
+
+add(IN int a, IN int b, OUT int ans)
+{
+	retun ans;	
+}
+
+
+Constraints
+------------
+--> Restrictions appiled on  table column is called as Constraints.
+
+
+
+CREATE TABLE student(
+	rno int,
+	name varchar(20) NOT NULL,
+	per double CHECK(per>=0 and per<=100),
+	email varchar(20) UNIQUE NOT NULL,
+	PRIMARY KEY(rno)
+);
+
+PRIMARY KEY
+	- Unique values
+	- NOT NULL
+NOT NULL
+	- Column does not have NULL(empty) value
+UNIQUE
+	- Unique values
+
+rno email
+----------
+101 a@gmail.com
+102 NULL
+103 NULL
+
+
+
+
+
+
+
+
+
+
+
+Core java Question -
+Find tycasting needed for this code
+---------------------------------------
+char ch = 'A';
+
+short s = ch;
+
+char ch2 = s;
+
+------------------------------------------
+double d = 45;
+
+double a = 4.0;
+
+int   b = a;  // error
+float c = a;  // error
+
+int   b = (int) a;  // works
+float c = (float) a;  // works
+
+
+Scene-1
+---------
+
+A field of a Entity class which is required at java level, but that field should not be mapped by hiberate to Database table.
+
+101 AAA 60
+
+
+class Student implments serializable
+{
+	
+	private Integer rno;
+	private String name;
+	private Double per;
+
+
+	transient private string grade;
+}
+
+We are expecting 'age' should not participae in serialization and deserialization.
+
+-------------------------------------------------------------------------
+
+*Logic Building Batch Code*
+-------------------------
+LBJ01
+
+----------------------------------------------------------------------------
+
+=================================
+Primary Key Generation Algorithm
+=================================
+
+
+CREATE TABLE student(
+	
+	rno int primary key,
+	name varchar(10),
+	per float
+	
+);
+
+
+Student s = new Student();
+s.setRno(101); <--- Invalid approach
+
+s.setName("AAA");
+s.setPer(60);
+
+
+How to provide AutoIncrement in Postgresql
+-------------------------------------------
+
+CREATE TABLE student(
+	rno serial primary key,
+	name varchar(10),
+	per float
+);
+
+insert into student(name, per) values('AAA', 60);
+insert into student(name, per) values('BBB', 70);
+
+Note:
+-----
+--> By default serial will generate values from 1.
+
+
+How to provide AutoIncrement in MySQL
+-------------------------------------------
+CREATE TABLE student(
+	rno int primary key AUTO_INCREMENT,
+	name varchar(10),
+	per float
+);
+
+insert into student(name, per) values('AAA', 60);
+insert into student(name, per) values('BBB', 70);
+
+Note:
+-----
+--> By default AUTO_INCREMENT will generate values from 1.
+
+
+How to provide AutoIncrement from 'Specific value' in Postgresql 
+---------------------------------------------------------------
+
+Solution : Use SEQUENCE
+
+CREATE SEQUENCE tcaseq START 101 
+
+
+CREATE TABLE student(
+
+	rno int primary key DEFAULT nextval('tcaseq'),
+	name varchar(10) ,
+	per float 
+);
+
+
+
+
+
+How to provide AutoIncrement from 'Specific value' in MySQL 
+---------------------------------------------------------------
+
+CREATE TABLE student(
+	rno int primary key AUTO_INCREMENT,
+	name varchar(10),
+	per float
+) AUTO_INCREMENT=101;
+
+insert into student(name,per) values('AAA', 60);
+
+insert into student(name,per) values('BBB', 70);
+
+mysql> select * from student;
+
++-----+------+------+
+| rno | name | per  |
++-----+------+------+
+| 101 | AAA  |   60 |
+| 102 | BBB  |   70 |
++-----+------+------+
+
+
+There are 4 ways to primary key auto-generation Strategies -
+--------------------------------------------------------------
+1. @GeneratedValue(strategy=GenerationType.AUTO)
+	--> MySQL used Temp Table strategy
+	--> Postgresql used Sequece strategy
+
+2. @GeneratedValue(strategy=GenerationType.IDENTITY)
+	--> MySQL used AUTO_INCREMENT strategy
+	--> Postgresql used generated by default as identity
+
+3. @GeneratedValue(strategy=GenerationType.SEQUENCE)
+	--> MySQL does not supports this feature
+	--> Postgresql use user-defined sequence in this strategy
+	
+4. @GeneratedValue(strategy=GenerationType.TABLE)
+
+
+#define NULL 0
+#define MONDAY 0
+
+RNO integer generated 
+by default as identity
+int *P = NULL;
+Day a = MONDAY;
+
+GenerationType.AUTO
+----------------------
+
+Demo.java
+
+
+class GenerationType
+{
+	final static int AUTO = 1;
+	final static int IDENTITY = 2;
+	final static int SEQUENCE = 3;
+	final static int TABLE = 4;
+	
+}
+
+1
+
+GenerationType.AUTO = 7;
+
+int v=1; // 2
+
+int nextval(char seqname[] )
+{
+	int t;
+
+	t = v; 
+
+	v++;
+
+	return t;
+
+}
+
+@TableGenerator(name="tg", 
+                table="mytab", 
+                pkColumnName = "myid", 
+                pkColumnValue = "100", 
+                valueColumnName = "next_hi", 
+                allocationSize = 1)
+
+
+@Id
+	@TableGenerator(name="tg", table="mytab", 
+	pkColumnName = "myid", pkColumnValue = "100", 
+	valueColumnName = "next_hi", initialValue=700,  
+	allocationSize = 1)
+
+	@GeneratedValue(strategy = GenerationType.TABLE, generator = "tg")
+	@Column(name="RNO")
+	private Integer rno;
+	
+
+
+
+	@Id
+	@TableGenerator(name="tg", table="mytab", pkColumnName = "myid", pkColumnValue = "101", valueColumnName = "next_hi", initialValue=500,  allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.TABLE, generator = "tg")
+	@Column(name="TNO")
+	private Integer tno;
+
+
+Composite Key
+----------------
+--> More than one columns are used as a key to uniquely identify.
+--> @Id annotation is used to mention field of a class as primary key.
+--> So to prepare composite key we have to use @EmbeddedId Annotation
+
+
+CREATE TABLE student(
+			fname varchar(20),
+			lname varchar(20),
+			city  varchar(20),
+
+			PRIMARY KEY(fname, lname)
+	);	
+
+insert into student values('sachin', 'dhane', 'Pune');
+insert into student values('sachin', 'tendulkar', 'Mumbai');
+insert into student values('sachin', 'tendulkar', 'Pune');
+
+class Student
+{
+	@Id
+	int rno;
+	
+	@Id
+	int phno;
+}
+
+select
+        fname,
+        lname,
+        city 
+    from
+        student 
+    where (fname, lname)
+        ) in ( (?, ?) )
+
+
+
+select fname, lname, city 
+from student 
+where (fname,lname) in (('sachin', 'dhane'), ('yash','dhore'));
+                       ( PUNE              ,  mumbai         );
+
+
+Usecase of Composite Key
+-------------------------
+
+state-district     number     series   date    time    
+MH14				1234       EH
+MH11                1234
+MH13                9876
+MH12                1234
+MH14                7817
+MH11                6718
+MH14                1234       CJ
+
+
+Composte Key (state-district, number,series )
+
+
+--------------------------------------------------------
+
+CREATE TABLE account(
+	accno int primary key,
+	accholdername varchar(20),
+	acctype varchar(10),
+	balance float CHECK(balance > 500)
+);
+
+insert into account values(101,'AAA', 'saving', 10000);
+insert into account values(102,'BBB', 'saving', 20000);
+
+
+
+Assessment 
+-------------
+Consider Student-Course(M-M) Relationship with 'REG_DATE' as Descriptive attibute.
+
+Tables/Entities -
+		Student, Course, Registration
+
+Add Course Entity with Fields - 
+	cid , cname, amount, creation_date_time, last_updated_date_time
+
+Add Resgistration Entity(Third Table)
+	rid, sid,cid,REG_DATE, creation_date_tim, last_updated_date_time
+
+
+Operations on Course Entity -
+--> Add Course
+--> Update Course
+--> Delete Course 
+--> Show Course details from id
+--> Show Course details from cource name
+--> Show ALL Course details 
+
+
+Operations on Registration Entity -
+--> Add Registrations details -
+	 Example:
+	 	boolean addRegistration(Integer sid, Integercid)   --> Service Layer Method
+	 	boolean saveRegistration(Student S, Course C) 		--> Dao Layer Method
+
+--> Show List of Student Registered for a course-
+	 Example:
+
+	 List<Student> fetchStudents(Integer cid)  --> Service Layer Method
+	 List<Student> findStudents(Course c)		 --> Dao Layer Method
+
+--> Show List of Course for a Student -
+	 Example:
+	 List<Course> fetchCourses(Integer sid)	 --> Service Layer Method
+	 List<Course> findCourses(Student S)		 --> Dao Layer Method
+
+--> Cancel admision of a student for specific course -
+	 Example:
+
+	 boolean removeRegistration(Integer sid, Course cid)  --> Service Layer Method
+
+	 boolean deleteRegistration(Student S, Course C)		--> Dao Layer Method
+
